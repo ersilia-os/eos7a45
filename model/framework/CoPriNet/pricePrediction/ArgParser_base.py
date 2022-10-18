@@ -3,7 +3,7 @@ import argparse
 import inspect
 from argparse import ArgumentParser
 
-from pricePrediction import config
+from CoPriNet.pricePrediction import config
 
 
 class ArgParseable(abc.ABC):

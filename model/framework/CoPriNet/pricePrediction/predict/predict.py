@@ -10,9 +10,9 @@ from torch_geometric.data import Batch
 from tqdm import tqdm
 import pytorch_lightning as pl
 
-from pricePrediction.config import NUM_WORKERS_PER_GPU, BATCH_SIZE, DEFAULT_MODEL
-from pricePrediction.preprocessData.smilesToGraph import smiles_to_graph
-from pricePrediction.nets.netsGraph import PricePredictorModule
+from CoPriNet.pricePrediction.config import NUM_WORKERS_PER_GPU, BATCH_SIZE, DEFAULT_MODEL
+from CoPriNet.pricePrediction.preprocessData.smilesToGraph import smiles_to_graph
+from CoPriNet.pricePrediction.nets.netsGraph import PricePredictorModule
 
 
 

@@ -1,8 +1,8 @@
 import os, sys
 from argparse import ArgumentParser
 
-from pricePrediction.selectFromRawData.selectFromRawDataNonVirtualAll_base import RawDataSelector
-from pricePrediction import config
+from CoPriNet.pricePrediction.selectFromRawData.selectFromRawDataNonVirtualAll_base import RawDataSelector
+from CoPriNet.pricePrediction import config
 
 class SelectFromRawDataNonVirtualAll(RawDataSelector):
 

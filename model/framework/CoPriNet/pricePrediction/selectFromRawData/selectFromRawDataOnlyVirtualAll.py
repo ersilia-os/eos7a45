@@ -2,9 +2,9 @@ import os, sys
 import dask.dataframe as dd
 from argparse import ArgumentParser
 
-from pricePrediction.selectFromRawData.selectFromRawDataNonVirtualAll_base import RawDataSelector
+from CoPriNet.pricePrediction.selectFromRawData.selectFromRawDataNonVirtualAll_base import RawDataSelector
 import pandas as pd
-from pricePrediction import config
+from CoPriNet.pricePrediction import config
 
 class SelectFromRawDataOnlyVirtualAll(RawDataSelector):
     DESIRED_PARAMS_TO_ASK= ['full_dataset_fname', 'bb_fname', 'computed_datadir',]

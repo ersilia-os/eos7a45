@@ -7,9 +7,9 @@ from torch import nn
 import torch.nn.functional as F
 import pytorch_lightning as pl
 
-from pricePrediction import config
-from pricePrediction.ArgParser_base import ArgParseable
-from pricePrediction.nets.FDS_imbalance import FDS
+from CoPriNet.pricePrediction import config
+from CoPriNet.pricePrediction.ArgParser_base import ArgParseable
+from CoPriNet.pricePrediction.nets.FDS_imbalance import FDS
 
 
 class PricePredictorModule(pl.LightningModule, ArgParseable):
@@ -74,10 +74,10 @@ class PricePredictorModule(pl.LightningModule, ArgParseable):
         self.hparams.deg = deg
 
         if gnn_class == "GNN_PNAConv":
-            from pricePrediction.nets.basicArchitectures import GNN_PNAConv
+            from CoPriNet.pricePrediction.nets.basicArchitectures import GNN_PNAConv
             GNN = GNN_PNAConv
         elif gnn_class == "GNN_AttentiveFP":
-            from pricePrediction.nets.basicArchitectures import GNN_AttentiveFP
+            from CoPriNet.pricePrediction.nets.basicArchitectures import GNN_AttentiveFP
             GNN = GNN_AttentiveFP
         else:
             raise ValueError("Error, gnn_class not supported")
@@ -198,7 +198,7 @@ class PricePredictorModule(pl.LightningModule, ArgParseable):
         return conf
 
 if __name__ == "__main__":
-    from pricePrediction.preprocessData.smilesToGraph import smiles_to_graph
+    from CoPriNet.pricePrediction.preprocessData.smilesToGraph import smiles_to_graph
     from torch_geometric.data import Batch
 
     degree =[0, 41130, 117278, 70152, 3104]

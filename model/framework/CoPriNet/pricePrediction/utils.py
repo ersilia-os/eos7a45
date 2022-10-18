@@ -2,7 +2,7 @@ import os
 import shutil
 import numpy as np
 
-from pricePrediction import config
+from CoPriNet.pricePrediction import config
 
 def tryMakedir(dirname, remove=False):
     if  os.path.isdir(dirname):

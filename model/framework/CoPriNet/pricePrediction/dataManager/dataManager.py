@@ -12,11 +12,11 @@ from pytorch_lightning import seed_everything
 
 from torch.utils.data import DataLoader, Subset
 
-from pricePrediction import config
-from pricePrediction.ArgParser_base import ArgParseable
-from pricePrediction.dataManager.dataset import Dataset_graphPrice
-from pricePrediction.preprocessData.prepareDataMol2Price import DataBuilder
-from pricePrediction.utils import EncodedDirNamesAndTemplates
+from CoPriNet.pricePrediction import config
+from CoPriNet.pricePrediction.ArgParser_base import ArgParseable
+from CoPriNet.pricePrediction.dataManager.dataset import Dataset_graphPrice
+from CoPriNet.pricePrediction.preprocessData.prepareDataMol2Price import DataBuilder
+from CoPriNet.pricePrediction.utils import EncodedDirNamesAndTemplates
 
 
 class GraphPriceDatamodule(pl.LightningDataModule, ArgParseable):

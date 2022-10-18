@@ -12,10 +12,10 @@ import psutil
 import joblib
 from joblib import Parallel, delayed
 import numpy as np
-from pricePrediction import config
-from pricePrediction.config import USE_MMOL_INSTEAD_GRAM
-from pricePrediction.preprocessData.serializeDatapoints import getExampleId, serializeExample
-from pricePrediction.utils import tryMakedir, getBucketRanges, search_buckedId, EncodedDirNamesAndTemplates
+from CoPriNet.pricePrediction import config
+from CoPriNet.pricePrediction.config import USE_MMOL_INSTEAD_GRAM
+from CoPriNet.pricePrediction.preprocessData.serializeDatapoints import getExampleId, serializeExample
+from CoPriNet.pricePrediction.utils import tryMakedir, getBucketRanges, search_buckedId, EncodedDirNamesAndTemplates
 from .smilesToGraph import smiles_to_graph, compute_nodes_degree, fromPerGramToPerMMolPrice
 
 PER_WORKER_MEMORY_GB = 2

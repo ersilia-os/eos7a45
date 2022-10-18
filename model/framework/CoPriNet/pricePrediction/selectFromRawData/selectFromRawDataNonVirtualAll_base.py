@@ -1,8 +1,8 @@
 import os
 import dask.dataframe as dd
-from pricePrediction import config
-from pricePrediction.ArgParser_base import ArgParseable
-from pricePrediction.config import TEST_SIZE
+from CoPriNet.pricePrediction import config
+from CoPriNet.pricePrediction.ArgParser_base import ArgParseable
+from CoPriNet.pricePrediction.config import TEST_SIZE
 
 
 class RawDataSelector(ArgParseable):

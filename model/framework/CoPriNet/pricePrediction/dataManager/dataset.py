@@ -5,8 +5,8 @@ import numpy as np
 
 from torch.utils.data import Dataset
 
-from pricePrediction.preprocessData.serializeDatapoints import getExampleId, deserializeExample
-from pricePrediction.utils import search_buckedId, EncodedDirNamesAndTemplates
+from CoPriNet.pricePrediction.preprocessData.serializeDatapoints import getExampleId, deserializeExample
+from CoPriNet.pricePrediction.utils import search_buckedId, EncodedDirNamesAndTemplates
 
 
 class Dataset_graphPrice(Dataset):
