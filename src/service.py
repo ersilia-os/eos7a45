@@ -1,5 +1,4 @@
 from typing import List
-
 from bentoml import BentoService, api, artifacts
 from bentoml.adapters import JsonInput
 from bentoml.types import JsonSerializable

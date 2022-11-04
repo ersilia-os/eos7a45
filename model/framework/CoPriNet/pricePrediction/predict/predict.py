@@ -19,7 +19,7 @@ from CoPriNet.pricePrediction.nets.netsGraph import PricePredictorModule
 class GraphPricePredictor():
     name = "price_GNN"
 
-    def __init__(self, model_path=DEFAULT_MODEL, n_gpus = 1, n_cpus= NUM_WORKERS_PER_GPU, batch_size:int=BATCH_SIZE,
+    def __init__(self, model_path=DEFAULT_MODEL, n_gpus = 0, n_cpus= NUM_WORKERS_PER_GPU, batch_size:int=BATCH_SIZE,
                  **kwargs):
         self.model_path = model_path
         self.n_gpus = n_gpus
