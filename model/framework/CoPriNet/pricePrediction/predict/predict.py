@@ -54,7 +54,8 @@ class GraphPricePredictor():
         preds = self.trainer.predict(self.model, dataloader)
         n_smiles = len(smiles_list)
         all_preds = np.nan * np.ones(n_smiles)
-        for i, batch in enumerate(dataloader):
+        for i, batch in enumerate(dataloader): 
+           
             batch_preds = preds[i].to("cpu").numpy()
             idxs = batch.input_idx.to("cpu").numpy().astype(np.int64).tolist()
             all_preds[idxs] = batch_preds
@@ -97,17 +98,19 @@ def main():
     args = parser.parse_args()
 
     df = pd.read_csv(args.input_csv_file)
+
     nans = df[args.smiles_colname].isna()
     df = df[~nans]
+
     smiles_list = df[args.smiles_colname]
     predictor = GraphPricePredictor( **vars(args))
     preds = predictor.yieldPredictions(smiles_list)
-
     if args.output_file is None:
         for smi, pred in zip(smiles_list, preds):
             print("%s\t%.4f" % (smi, pred))
     else:
         df[coprinet_colname] = list(preds)
+        df = df['CoPriNet']
         df.to_csv(args.output_file, index=False)
 
 if __name__ == '__main__':
