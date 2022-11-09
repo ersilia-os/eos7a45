@@ -52,7 +52,7 @@ class Model(object):
                 "python {0}/predict.py {1} -o {2} ".format(
                     self.framework_dir,
                     data_file,
-                    'pred.csv'
+                    pred_file
                 )
             ]
             f.write(os.linesep.join(lines))
@@ -61,7 +61,7 @@ class Model(object):
             subprocess.Popen(
                 cmd, stdout=fp, stderr=fp, shell=True, env=os.environ
             ).wait()
-        with open('pred.csv', "r") as f:
+        with open(pred_file, "r") as f:
             reader = csv.reader(f)
             h = next(reader)
             R = []
