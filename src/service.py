@@ -66,9 +66,9 @@ class Model(object):
             h = next(reader)
             R = []
             for r in reader:
-                R += [{"embedding": [float(x) for x in r]}]
+                R += [{"value": [float(x) for x in r]}]
         meta = {
-            "embedding": h
+            "value": h
         }
         result = {
             'result': R,
