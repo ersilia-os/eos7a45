@@ -1,10 +1,8 @@
 from typing import List
-
 from bentoml import BentoService, api, artifacts
 from bentoml.adapters import JsonInput
 from bentoml.types import JsonSerializable
 from bentoml.service import BentoServiceArtifact
-
 import pickle
 import os
 import shutil
@@ -45,16 +43,16 @@ class Model(object):
         pred_file = os.path.join(tmp_folder, self.PRED_FILE)
         log_file = os.path.join(tmp_folder, self.LOG_FILE)
         with open(data_file, "w") as f:
-            f.write("smiles"+os.linesep)
+            f.write("SMILES"+os.linesep)
             for smiles in smiles_list:
                 f.write(smiles + os.linesep)
         run_file = os.path.join(tmp_folder, self.RUN_FILE)
         with open(run_file, "w") as f:
             lines = [
-                "python {0}/predict.py -i {1} -o {2} ".format(
+                "python {0}/predict.py {1} -o {2} ".format(
                     self.framework_dir,
                     data_file,
-                    'out.csv'
+                    'pred.csv'
                 )
             ]
             f.write(os.linesep.join(lines))
@@ -63,7 +61,7 @@ class Model(object):
             subprocess.Popen(
                 cmd, stdout=fp, stderr=fp, shell=True, env=os.environ
             ).wait()
-        with open('out.csv', "r") as f:
+        with open('pred.csv', "r") as f:
             reader = csv.reader(f)
             h = next(reader)
             R = []

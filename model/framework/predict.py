@@ -1,6 +1,6 @@
 from CoPriNet.pricePrediction.predict.predict import main
 
-main()
+#main()
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
