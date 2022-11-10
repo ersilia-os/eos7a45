@@ -8,6 +8,7 @@ RUN pip install torchmetrics==0.6.0
 RUN pip install rdkit-pypi
 RUN pip install more-itertools==8.8.0
 RUN pip install numpy
+RUN pip install pandas
 
 
 
