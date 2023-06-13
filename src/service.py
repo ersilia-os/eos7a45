@@ -74,6 +74,7 @@ class Model(object):
             'result': R,
             'meta': meta
         }
+        shutil.rmtree(tmp_folder)
         return result
 
 
