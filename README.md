@@ -23,6 +23,11 @@ CoPriNet has been trained on 2D graph representations of small molecules with th
 * [Source Code](https://github.com/oxpig/CoPriNet)
 * Ersilia contributor: [anamika-yadav99](https://github.com/anamika-yadav99)
 
+## Ersilia model URLs
+* [GitHub](https://github.com/ersilia-os/eos7a45)
+* [AWS S3](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7a45.zip)
+* [DockerHub](https://hub.docker.com/r/ersiliaos/eos7a45) (AMD64, ARM64)
+
 ## Citation
 
 If you use this model, please cite the [original authors](https://pubs.rsc.org/en/content/articlelanding/2023/dd/d2dd00071g) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
