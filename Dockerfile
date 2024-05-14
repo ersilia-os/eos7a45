@@ -10,8 +10,7 @@ RUN pip install torchmetrics==0.6.2
 RUN pip install torch-geometric==2.1.0
 RUN pip install torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-1.8.0+cpu.html
 RUN pip install more-itertools==8.8.0
-
-
+RUN conda install -c conda-forge typing-extensions=4.7.1
 
 WORKDIR /repo
 COPY . /repo
