@@ -1,6 +1,7 @@
 FROM bentoml/model-server:0.11.0-py37
 MAINTAINER ersilia
  
+
 RUN conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cpuonly -c pytorch
 RUN pip install numpy==1.21.4
 RUN pip install pandas==1.3.5 
