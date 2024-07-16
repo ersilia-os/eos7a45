@@ -94,8 +94,8 @@ jobs:
           repository: "ersilia-os/${{ github.event.repository.name }}"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           amend: true
-          force: true
-      
+          force: true  
+                  
       - name: Predict output
         env:
           MODEL_ID: ${{ github.event.repository.name }}
