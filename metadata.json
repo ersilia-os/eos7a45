@@ -4,21 +4,26 @@
     "Status": "Ready",
     "Title": "Small molecule price prediction",
     "Description": "CoPriNet has been trained on 2D graph representations of small molecules with their associated price in the Mcule catalog. The predicted price provides a better overview of the compound availability than standard synthetic accessibility scores or retrosynthesis tools. The Mcule catalog is proprietary but the trained model as well as the test dataset (100K) are publicly available.\n",
-    "Mode": "Pretrained",
+    "Source": "Local",
+    "Source Type": "External",
     "Input": [
         "Compound"
     ],
     "Input Shape": "Single",
-    "Task": [
-        "Regression"
+    "Input Dimension": 1,
+    "Task": "Annotation",
+    "Subtask": "Property calculation or prediction",
+    "Biomedical Area": [
+        "Any"
+    ],
+    "Target Organism": [
+        "Not Applicable"
     ],
     "Output": [
         "Other value"
     ],
-    "Output Type": [
-        "Float"
-    ],
-    "Output Shape": "Single",
+    "Output Dimension": 1,
+    "Output Consistency": "Fixed",
     "Interpretation": "Price value prediction",
     "Tag": [
         "Price",
@@ -26,12 +31,18 @@
         "Chemical synthesis"
     ],
     "Publication": "https://pubs.rsc.org/en/content/articlelanding/2023/dd/d2dd00071g",
+    "Publication Type": "Peer reviewed",
+    "Publication Year": 2022,
     "Source Code": "https://github.com/oxpig/CoPriNet",
     "License": "MIT",
     "Contributor": "anamika-yadav99",
-    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7a45.zip",
+    "Incorporation Date": "2022-03-28",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos7a45",
     "Docker Architecture": [
         "AMD64"
+    ],
+    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7a45.zip",
+    "Deployment": [
+        "Local"
     ]
 }
