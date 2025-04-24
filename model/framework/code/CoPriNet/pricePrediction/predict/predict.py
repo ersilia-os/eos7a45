@@ -77,10 +77,41 @@ class MyIterableDataset(IterableDataset):
             return iter(self.generator_fun())
 
 
-def main(smiles_list):
-    predictor = GraphPricePredictor()
+def main():
+    parser = argparse.ArgumentParser(prog="CoPriNet")
+    parser.add_argument("input_csv_file", type=str, help="The input csv filename containing a smiles column")
+    parser.add_argument("-o", "--output_file", type=str, required=False, default=None, help="The output filename that will be "
+                            "identical to the input_csv_file but with one additional column for the score")
+    parser.add_argument("--smiles_colname", type=str, required=False, default="SMILES", help="The colname for SMILES "
+                                                                             "in the input file.  Default: %(default)s")
+    parser.add_argument("--model_path", type=str, required=False, default=DEFAULT_MODEL,
+                        help="The CoPriNet model checkpoing path. Default: %(default)s")
+
+    parser.add_argument("--n_cpus", type=int, required=False, default=NUM_WORKERS_PER_GPU,
+                        help="The number of cpu workers. Default: %(default)s")
+
+    parser.add_argument("--batch_size", type=int, required=False, default=BATCH_SIZE,
+                        help="Batch size. Default: %(default)s")
+
+    coprinet_colname = "CoPriNet"
+
+    args = parser.parse_args()
+
+    df = pd.read_csv(args.input_csv_file)
+
+    nans = df[args.smiles_colname].isna()
+    df = df[~nans]
+
+    smiles_list = df[args.smiles_colname]
+    predictor = GraphPricePredictor( **vars(args))
     preds = predictor.yieldPredictions(smiles_list)
-    return preds
+    if args.output_file is None:
+        for smi, pred in zip(smiles_list, preds):
+            print("%s\t%.4f" % (smi, pred))
+    else:
+        df[coprinet_colname] = list(preds)
+        df = df['CoPriNet']
+        df.to_csv(args.output_file, index=False)
 
 if __name__ == '__main__':
     main()

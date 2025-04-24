@@ -35,6 +35,6 @@ LEARNING_RATE= 1e-5
 N_LAYERS=6
 N_HIDDEN_NODE=75
 N_HIDDEN_EDGE=50
-CHECKPOINTS_DIR = os.path.abspath(os.path.join(root, "..", "..", "..", "checkpoints"))
+CHECKPOINTS_DIR = os.path.abspath(os.path.join(root, "..", "..", "..", "..","checkpoints"))
 DEFAULT_MODEL = os.path.join(CHECKPOINTS_DIR , "final_inStock/lightning_logs/version_0/checkpoints/epoch=238-step=1295857.ckpt")
 # DEFAULT_MODEL = os.path.join( DATA_DIR, "final_virtual/lightning_logs/version_0/checkpoints/epoch=172-step=3231639.ckpt")
