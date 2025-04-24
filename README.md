@@ -2,7 +2,7 @@
 
 CoPriNet has been trained on 2D graph representations of small molecules with their associated price in the Mcule catalog. The predicted price provides a better overview of the compound availability than standard synthetic accessibility scores or retrosynthesis tools. The Mcule catalog is proprietary but the trained model as well as the test dataset (100K) are publicly available.
 
-This model was incorporated on 2022-03-28.
+This model was incorporated on 2022-04-11.
 
 ## Information
 ### Identifiers
