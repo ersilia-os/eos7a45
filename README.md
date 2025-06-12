@@ -41,7 +41,12 @@ Below are the **Output Columns** of the model:
 ### Resource Consumption
 - **Model Size (Mb):** `627`
 - **Environment Size (Mb):** `5716`
+- **Image Size (Mb):** `6700.31`
 
+**Computational Performance (seconds):**
+- 10 inputs: `33.13`
+- 100 inputs: `26.47`
+- 10000 inputs: `578.03`
 
 ### References
 - **Source Code**: [https://github.com/oxpig/CoPriNet](https://github.com/oxpig/CoPriNet)
