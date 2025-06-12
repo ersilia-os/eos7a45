@@ -42,9 +42,13 @@
     "Incorporation Date": "2022-04-11",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7a45.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos7a45",
-    "Docker Architecture": [
-        "AMD64"
-    ],
+    "Docker Architecture": "AMD64",
     "Model Size": 627.0,
-    "Environment Size": 5716.0
+    "Environment Size": 5716.0,
+    "Image Size": 6700.31,
+    "Computational Performance 1": 33.13,
+    "Computational Performance 2": 23.13,
+    "Computational Performance 3": 26.47,
+    "Computational Performance 4": 126.53,
+    "Computational Performance 5": 578.03
 }
