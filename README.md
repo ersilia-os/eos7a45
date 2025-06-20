@@ -35,18 +35,18 @@ Below are the **Output Columns** of the model:
 - **Source:** `Local`
 - **Source Type:** `External`
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos7a45](https://hub.docker.com/r/ersiliaos/eos7a45)
-- **Docker Architecture:** `AMD64`
+- **Docker Architecture:** `AMD64`, `ARM64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7a45.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7a45.zip)
 
 ### Resource Consumption
 - **Model Size (Mb):** `627`
 - **Environment Size (Mb):** `5729`
-- **Image Size (Mb):** `6700.31`
+- **Image Size (Mb):** `6221.85`
 
 **Computational Performance (seconds):**
-- 10 inputs: `33.13`
-- 100 inputs: `26.47`
-- 10000 inputs: `578.03`
+- 10 inputs: `34.51`
+- 100 inputs: `29.13`
+- 10000 inputs: `719.22`
 
 ### References
 - **Source Code**: [https://github.com/oxpig/CoPriNet](https://github.com/oxpig/CoPriNet)
