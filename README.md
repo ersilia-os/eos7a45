@@ -40,7 +40,7 @@ Below are the **Output Columns** of the model:
 
 ### Resource Consumption
 - **Model Size (Mb):** `627`
-- **Environment Size (Mb):** `5716`
+- **Environment Size (Mb):** `5729`
 - **Image Size (Mb):** `6700.31`
 
 **Computational Performance (seconds):**
@@ -53,7 +53,7 @@ Below are the **Output Columns** of the model:
 - **Publication**: [https://pubs.rsc.org/en/content/articlelanding/2023/dd/d2dd00071g](https://pubs.rsc.org/en/content/articlelanding/2023/dd/d2dd00071g)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2022`
-- **Ersilia Contributor:** [anamika-yadav99](https://github.com/anamika-yadav99)
+- **Ersilia Contributor:** [Abellegese](https://github.com/Abellegese)
 
 ### License
 This package is licensed under a [GPL-3.0](https://github.com/ersilia-os/ersilia/blob/master/LICENSE) license. The model contained within this package is licensed under a [MIT](LICENSE) license.
