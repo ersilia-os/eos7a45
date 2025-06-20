@@ -38,7 +38,7 @@
     "Publication": "https://pubs.rsc.org/en/content/articlelanding/2023/dd/d2dd00071g",
     "Source Code": "https://github.com/oxpig/CoPriNet",
     "License": "MIT",
-    "Contributor": "anamika-yadav99",
+    "Contributor": "Abellegese",
     "Incorporation Date": "2022-04-11",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7a45.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos7a45",
