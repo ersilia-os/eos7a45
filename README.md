@@ -2,8 +2,7 @@
 
 CoPriNet has been trained on 2D graph representations of small molecules with their associated price in the Mcule catalog. The predicted price provides a better overview of the compound availability than standard synthetic accessibility scores or retrosynthesis tools. The Mcule catalog is proprietary but the trained model as well as the test dataset (100K) are publicly available.
 
-This model was incorporated on 2022-04-11.
-
+This model was incorporated on 2022-04-11.Last packaged on 2025-10-13.
 
 ## Information
 ### Identifiers
@@ -42,12 +41,12 @@ Below are the **Output Columns** of the model:
 ### Resource Consumption
 - **Model Size (Mb):** `627`
 - **Environment Size (Mb):** `5766`
-- **Image Size (Mb):** `6221.85`
+- **Image Size (Mb):** `6256.97`
 
 **Computational Performance (seconds):**
-- 10 inputs: `34.51`
-- 100 inputs: `29.13`
-- 10000 inputs: `719.22`
+- 10 inputs: `29.11`
+- 100 inputs: `20.28`
+- 10000 inputs: `207.13`
 
 ### References
 - **Source Code**: [https://github.com/oxpig/CoPriNet](https://github.com/oxpig/CoPriNet)
