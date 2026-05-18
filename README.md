@@ -50,7 +50,7 @@ Below are the **Output Columns** of the model:
 
 ### References
 - **Source Code**: [https://github.com/oxpig/CoPriNet](https://github.com/oxpig/CoPriNet)
-- **Publication**: [https://pubs.rsc.org/en/content/articlelanding/2023/dd/d2dd00071g](https://pubs.rsc.org/en/content/articlelanding/2023/dd/d2dd00071g)
+- **Publication**: [https://doi.org/10.1039/D2DD00071G](https://doi.org/10.1039/D2DD00071G)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2022`
 - **Ersilia Contributor:** [anamika-yadav99](https://github.com/anamika-yadav99)
