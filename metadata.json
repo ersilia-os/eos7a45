@@ -1,7 +1,7 @@
 {
     "Identifier": "eos7a45",
     "Slug": "coprinet-molecule-price",
-    "Status": "In maintenance",
+    "Status": "Ready",
     "Title": "Small molecule price prediction",
     "Description": "CoPriNet has been trained on 2D graph representations of small molecules with their associated price in the Mcule catalog. The predicted price provides a better overview of the compound availability than standard synthetic accessibility scores or retrosynthesis tools. The Mcule catalog is proprietary but the trained model as well as the test dataset (100K) are publicly available.",
     "Deployment": [
@@ -39,7 +39,7 @@
     "License": "MIT",
     "Contributor": "anamika-yadav99",
     "Incorporation Date": "2022-04-11",
-    "Last Packaging Date": "2025-10-13",
+    "Last Packaging Date": "2026-07-07",
     "Release": "v1.0.0",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7a45.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos7a45",
@@ -49,11 +49,11 @@
     ],
     "Model Size": 627.0,
     "Environment Size": 5756.0,
-    "Image Size": 6256.97,
-    "Computational Performance 1": 29.11,
-    "Computational Performance 2": 18.84,
-    "Computational Performance 3": 20.28,
-    "Computational Performance 4": 53.66,
-    "Computational Performance 5": 207.13,
+    "Image Size": 6261.9,
+    "Computational Performance 1": 26.74,
+    "Computational Performance 2": 16.56,
+    "Computational Performance 3": 17.96,
+    "Computational Performance 4": 51.77,
+    "Computational Performance 5": 206.08,
     "Input Shape": "Single"
 }
