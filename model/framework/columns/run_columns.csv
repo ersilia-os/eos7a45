@@ -1,2 +1,2 @@
 name,type,direction,description
-coprinet,float,low,Predicted price of the molecule
+coprinet,float,high,Predicted price of the molecule
