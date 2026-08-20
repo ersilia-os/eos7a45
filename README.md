@@ -1,6 +1,6 @@
 # Small molecule price prediction
 
-CoPriNet has been trained on 2D graph representations of small molecules with their associated price in the Mcule catalog. The predicted price provides a better overview of the compound availability than standard synthetic accessibility scores or retrosynthesis tools. The Mcule catalog is proprietary but the trained model as well as the test dataset (100K) are publicly available.
+Estimates what a compound would cost to buy, a consideration that shapes which virtual hits are worth pursuing yet is rarely modelled. CoPriNet was trained on catalogue prices from commercial suppliers using a graph neural network, giving an estimate for molecules that have never been quoted. Prices reflect supplier listings at the time of collection and follow synthetic accessibility only loosely, so the output indicates relative expense rather than a quotable figure.
 
 This model was incorporated on 2022-04-11.Last packaged on 2026-07-07.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2022-04-11.Last packaged on 2026-07-07.
 ### Output
 - **Output Dimension:** `1`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Price value prediction
+- **Interpretation:** Predicted purchase price of the compound, where higher values indicate a more expensive molecule.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
@@ -52,7 +52,7 @@ Below are the **Output Columns** of the model:
 - **Source Code**: [https://github.com/oxpig/CoPriNet](https://github.com/oxpig/CoPriNet)
 - **Publication**: [https://doi.org/10.1039/D2DD00071G](https://doi.org/10.1039/D2DD00071G)
 - **Publication Type:** `Peer reviewed`
-- **Publication Year:** `2022`
+- **Publication Year:** `2023`
 - **Ersilia Contributor:** [anamika-yadav99](https://github.com/anamika-yadav99)
 
 ### License
