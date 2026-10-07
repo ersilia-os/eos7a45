@@ -1,6 +1,6 @@
 # Small molecule price prediction
 
-Estimates what a compound would cost to buy, a consideration that shapes which virtual hits are worth pursuing yet is rarely modelled. CoPriNet was trained on catalogue prices from commercial suppliers using a graph neural network, giving an estimate for molecules that have never been quoted. Prices reflect supplier listings at the time of collection and follow synthetic accessibility only loosely, so the output indicates relative expense rather than a quotable figure.
+Estimates what a compound would cost to buy, a question that decides which virtual hits are worth chasing but is usually approximated by synthetic accessibility scores instead. CoPriNet is a retrosynthesis-free graph neural network trained by Sanchez-Garcia and colleagues on 2D molecular graphs paired with Mcule catalogue prices for over six million in-stock compounds, and its predictions track real prices better than any synthetic accessibility metric they tested. The Mcule catalogue is proprietary, though the trained model and a 100,000-compound test set are public.
 
 This model was incorporated on 2022-04-11.Last packaged on 2026-07-07.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2022-04-11.Last packaged on 2026-07-07.
 ### Output
 - **Output Dimension:** `1`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** Predicted purchase price of the compound, where higher values indicate a more expensive molecule.
+- **Interpretation:** Predicted catalogue price in US dollars per mmol, higher values marking a more expensive compound.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
