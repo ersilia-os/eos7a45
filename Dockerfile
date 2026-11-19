@@ -1,17 +1,10 @@
 FROM bentoml/model-server:0.11.0-py38
 MAINTAINER ersilia
 
-RUN conda install -c conda-forge pandas==1.3.5
 RUN pip install pip==23.3.1
-RUN pip install rdkit==2022.9.5
-RUN pip install pytorch-lightning==1.6.5
-RUN pip install torch==1.8.1 -f https://data.pyg.org/whl/torch-1.8.1+cpu.html
-RUN pip install torch_scatter==2.0.8 -f https://data.pyg.org/whl/torch-1.8.1+cpu.html
-RUN pip install torch_sparse==0.6.12 -f https://data.pyg.org/whl/torch-1.8.1+cpu.html
-RUN pip install torch_cluster==1.5.9 -f https://data.pyg.org/whl/torch-1.8.1+cpu.html
-RUN pip install torch_spline_conv==1.2.1 -f https://data.pyg.org/whl/torch-1.8.1+cpu.html
-RUN pip install torch-geometric==2.0.1 -f https://data.pyg.org/whl/torch-1.8.1+cpu.html
-RUN pip install more-itertools==8.8.0
+RUN pip install numpy==1.24.4 pandas==1.3.5 rdkit==2022.9.5 more-itertools==8.8.0
+RUN pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu
+RUN pip install torch-geometric==2.5.3 pytorch-lightning==1.9.5
 
 WORKDIR /repo
 COPY . /repo
