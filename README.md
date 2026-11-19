@@ -3,7 +3,7 @@
 Estimates what a compound would cost to buy, a question that decides which virtual hits are worth chasing but is usually approximated by synthetic accessibility scores instead. CoPriNet is a retrosynthesis-free graph neural network trained by Sanchez-Garcia and colleagues on 2D molecular graphs paired with Mcule catalogue prices for over six million in-stock compounds, and its predictions track real prices better than any synthetic accessibility metric they tested. The Mcule catalogue is proprietary, though the trained model and a 100,000-compound test set are public.
 
 This model was incorporated on 2022-04-11.
-Last packaged on 2026-07-07.
+Last packaged on 2026-11-19.
 
 ## Information
 ### Identifiers
@@ -42,12 +42,12 @@ Below are the **Output Columns** of the model:
 ### Resource Consumption
 - **Model Size (Mb):** `209`
 - **Environment Size (Mb):** `1505`
-- **Image Size (Mb):** `6261.9`
+- **Image Size (Mb):** `449.87`
 
 **Computational Performance (seconds):**
-- 10 inputs: `26.74`
-- 100 inputs: `17.96`
-- 10000 inputs: `206.08`
+- 10 inputs: `26.25`
+- 100 inputs: `16.38`
+- 10000 inputs: `201.39`
 
 ### References
 - **Source Code**: [https://github.com/oxpig/CoPriNet](https://github.com/oxpig/CoPriNet)
