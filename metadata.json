@@ -40,7 +40,7 @@
     "Contributor": "anamika-yadav99",
     "Incorporation Date": "2022-04-11",
     "Last Packaging Date": "2026-11-19",
-    "Release": "v1.0.0",
+    "Release": "v1.1.0",
     "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos7a45.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos7a45",
     "Docker Architecture": [
