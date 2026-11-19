@@ -26,7 +26,9 @@ class GraphPricePredictor():
         self.n_cpus = n_cpus
         self.batch_size = batch_size
         self.trainer = pl.Trainer(gpus=self.n_gpus, logger=False)
-        self.model = PricePredictorModule.load_from_checkpoint(self.model_path, batch_size=self.batch_size)
+        # strict=False: torch_geometric >= 2.3 registers the PNAConv degree statistics (avg_deg_lin/log)
+        # as buffers; the checkpoint predates them. They are rebuilt from `deg` in the constructor.
+        self.model = PricePredictorModule.load_from_checkpoint(self.model_path, batch_size=self.batch_size, strict=False)
 
     def prepare_smi(self, idx_smi):
         idx, smi = idx_smi

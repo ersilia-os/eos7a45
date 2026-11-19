@@ -3,6 +3,20 @@ import numpy as np
 from torch import nn
 import torch.nn.functional as F
 from torch_geometric.nn import PNAConv, BatchNorm, global_add_pool, AttentiveFP, Set2Set
+import torch_geometric
+
+_PYG_GE_23 = tuple(int(v) for v in torch_geometric.__version__.split('.')[:2]) >= (2, 3)
+
+if _PYG_GE_23:
+    from torch_geometric.nn.aggr import Aggregation
+
+    class _LegacyStdAggregation(Aggregation):
+        """Standard deviation as computed by torch_geometric 2.0.1: sqrt(relu(E[x^2] - E[x]^2) + 1e-5)."""
+
+        def forward(self, x, index=None, ptr=None, dim_size=None, dim=-2, max_num_elements=None):
+            mean = self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+            mean_sq = self.reduce(x * x, index, ptr, dim_size, dim, reduce='mean')
+            return torch.sqrt(torch.relu(mean_sq - mean * mean) + 1e-5)
 from torch.nn import ModuleList, Linear, ReLU, Sequential, Dropout
 
 
@@ -62,6 +76,12 @@ class GNN_PNAConv(torch.nn.Module):
 
         aggregators = ['mean', 'min', 'max', 'std']
         scalers = ['identity', 'amplification', 'attenuation']
+        if _PYG_GE_23:
+            aggregators = ['mean', 'min', 'max', _LegacyStdAggregation()]
+            # torch_geometric 2.0.1 (used to train and validate this model) applied the scalers cumulatively, so
+            # 'attenuation' (amplification * attenuation) returned the unscaled aggregate. Newer versions apply
+            # each scaler on its own. Reproduce the 2.0.1 behaviour so predictions do not change.
+            scalers = ['identity', 'amplification', 'identity']
 
         self.convs = ModuleList()
         self.batch_norms = ModuleList()
@@ -70,6 +90,13 @@ class GNN_PNAConv(torch.nn.Module):
                            aggregators=aggregators, scalers=scalers, deg=deg,
                            edge_dim=hidden_size_edges, towers=towers, pre_layers=2, post_layers=2,
                            divide_input=False)
+            if hasattr(conv, "aggr_module"):
+                # torch_geometric >= 2.3 derives the degree statistics from the degree histogram. 2.0.1, the
+                # version this model was packaged and validated with, averaged `deg` as if it held per-node
+                # degrees. Keep the 2.0.1 values so predictions do not change.
+                deg_f = deg.to(torch.float)
+                conv.aggr_module.avg_deg_lin.fill_(float(deg_f.mean()))
+                conv.aggr_module.avg_deg_log.fill_(float((deg_f + 1).log().mean()))
             self.convs.append(conv)
             self.batch_norms.append(BatchNorm(hidden_size_node))
         self.set2set = Set2Set(hidden_size_node, processing_steps=6)
